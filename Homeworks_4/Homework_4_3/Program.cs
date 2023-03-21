@@ -4,7 +4,6 @@
 Console.Write("Задайте размер массива -> ");
 int num = int.Parse(Console.ReadLine()!);
 
-
 int[] array = new int [num];
 
 void FillArray(int[] arr)
@@ -16,15 +15,13 @@ void FillArray(int[] arr)
     }
    
 }
-
 void PrintArray(int[] arr)
 {
     int n = arr.Length;
     for (int i = 0; i < n; i++)
     {
-        Console.WriteLine(arr[i]);
-    }
-    
+        Console.Write($"{arr[i]} " );
+    }    
 }
 FillArray(array);
 PrintArray(array);
