@@ -4,24 +4,34 @@
 Console.Write("Задайте размер массива -> ");
 int num = int.Parse(Console.ReadLine()!);
 
-int[] array = new int [num];
+Console.Write("Диапазон случайных чисел С -> ");
+int start = int.Parse(Console.ReadLine()!);
 
-void FillArray(int[] arr)
+Console.Write("Диапазон случайных чисел ДО -> ");
+int stop = int.Parse(Console.ReadLine()!);
+
+
+int[] FillArray(int size, int from, int to)
 {
-    int count = arr.Length;
-    for (int i = 0; i < count; i++)
+    int[] arr = new int[size];
+
+    for (int i = 0; i < size; i++)
     {
-        arr[i] = new Random().Next(0,100);
+        arr[i] = new Random().Next(from, to + 1);
     }
-   
+   return arr;
 }
+
 void PrintArray(int[] arr)
 {
-    int n = arr.Length;
-    for (int i = 0; i < n; i++)
+    int size = arr.Length;
+    for (int i = 0; i < size; i++)
     {
         Console.Write($"{arr[i]} " );
-    }    
+    } 
+    Console.WriteLine();   
 }
-FillArray(array);
-PrintArray(array);
+
+int[] order = FillArray(num, start, stop);
+PrintArray(order);
+
