@@ -1,13 +1,13 @@
 ﻿// Напишите программу , которая задает массив из 8 элементов случайными числами и выводит их на экран.
 // Оформите заполнение массива и вывод в виде функции.
 
-Console.Write("Задайте размер массива -> ");
+Console.WriteLine("Задайте размер массива -> ");
 int num = int.Parse(Console.ReadLine()!);
 
-Console.Write("Диапазон случайных чисел С -> ");
+Console.WriteLine("Диапазон случайных чисел С -> ");
 int start = int.Parse(Console.ReadLine()!);
 
-Console.Write("Диапазон случайных чисел ДО -> ");
+Console.WriteLine("Диапазон случайных чисел ДО -> ");
 int stop = int.Parse(Console.ReadLine()!);
 
 
