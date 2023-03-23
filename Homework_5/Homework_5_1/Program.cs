@@ -1,11 +1,12 @@
 ﻿//Задайте массив, заполненный случайными положительными трехзначными числами.
 //Напишите программу, которая покажет количество четных чисел в массиве.
 
-Console.WriteLine("Задайте размер массива -> ");
+Console.Write("Set the size of the array -> ");
 int num = int.Parse(Console.ReadLine()!);
 
 int[] order = FillArray(num);
 PrintArray(order);
+CounterEven(order);
 
 int[] FillArray(int size)
 {
@@ -27,12 +28,15 @@ void PrintArray(int[] arr)
     Console.WriteLine();
 }
 
-int count = 0;
-for (int i = 0; i < order.Length; i++)
+int CounterEven(int[] arr)
 {
-    if (order[i] % 2 == 0)
-        count++;
+    int res = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] % 2 == 0) res++;
+    }
+    return res; 
 }
 
-Console.WriteLine($"Четных чисел в массиве {count}");
+Console.WriteLine($"The number of even numbers is {CounterEven(order)}");
 
