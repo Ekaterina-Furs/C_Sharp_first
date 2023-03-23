@@ -1,19 +1,26 @@
-﻿Console.WriteLine("Задайте размер массива -> ");
+﻿// Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов , стоящих на нечетных позициях.
+
+Console.Write("Set the size of the array -> ");
 int num = int.Parse(Console.ReadLine()!);
 
-int[] order = FillArray(num);
-PrintArray(order);
+Console.Write("The range of random numbers: FROM -> ");
+int start = int.Parse(Console.ReadLine()!);
 
-int[] FillArray(int size)
+Console.Write("The range of random numbers: TO -> ");
+int stop = int.Parse(Console.ReadLine()!);
+
+
+int[] FillArray(int size, int from, int to)
 {
     int[] arr = new int[size];
 
     for (int i = 0; i < size; i++)
     {
-        arr[i] = new Random().Next(100, 1000);
+        arr[i] = new Random().Next(from, to + 1);
     }
     return arr;
 }
+
 void PrintArray(int[] arr)
 {
     int size = arr.Length;
@@ -24,11 +31,17 @@ void PrintArray(int[] arr)
     Console.WriteLine();
 }
 
-int count = 0;
-for (int i = 0; i < order.Length; i++)
+int PositionOdd(int[] arr)
 {
-    if (order[i] % 2 == 0)
-        count++;
+    int sum = 0;
+    for (int i = 0; i < arr.Length; i += 2)
+    {
+        sum = sum + arr[i];
+    }
+    return sum;
 }
 
-Console.WriteLine($"Четных чисел в массиве {count}");
+int[] order = FillArray(num, start, stop);
+PrintArray(order);
+PositionOdd(order);
+Console.WriteLine($"The sum of odd elements is {PositionOdd(order)}.");
