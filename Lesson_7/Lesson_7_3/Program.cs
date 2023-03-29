@@ -25,6 +25,21 @@ void FillMatrix(int[,] matr, int from, int to)
 }
 
 
+int Sum(int[,] matr)
+{
+    int line = matr.GetLength(0);
+    int pillar = matr.GetLength(1);
+    int sum = 0;
+    for (int i = 0; i < line; i++)
+    {
+       for (int j = 0;  j < pillar; j++)
+       {
+        if(i == j) sum += matr[i, j];
+       } 
+    }
+    return sum;
+}
+
 Console.Write("Enter the number of rows: ");
 int row = int.Parse(Console.ReadLine()!);
 Console.Write("Enter the number of columns: ");
@@ -41,3 +56,4 @@ FillMatrix(matrix, start, stop);
 Console.WriteLine();
 PrintMatrix(matrix);
 Console.WriteLine();
+Console.WriteLine(Sum(matrix));
