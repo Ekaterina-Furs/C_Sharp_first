@@ -36,32 +36,29 @@ void FillMatrix(int[,] matr, int from, int to)
 }
 
 
-void NumValue(int[,] matr, int m, int n)
+void NumValue(int[,] matr)
 {
-    Console.WriteLine("Введите координату ряда:");
-    int r = int.Parse(Console.ReadLine()!);
-    Console.WriteLine("Введите координату столбца:");
-    int c = int.Parse(Console.ReadLine()!);
+    Console.Write("Enter the coordinate of the row: ");
+    int n = int.Parse(Console.ReadLine()!);
+    Console.Write("Enter the coordinate of the column: ");
+    int m = int.Parse(Console.ReadLine()!);
     
-    for (int i = 0; i < matr.GetLength(0); i++)
-        for (int j = 0; j < matr.GetLength(1); j++)
-         {
-            if(r > m && c > n) 
-            {
-                Console.WriteLine("The number does not exist");
-            }
-        else
-        {
-            object Num = matr.GetValue(r, c);
-            Console.WriteLine(Num);
-        }
-    }
+    if (n > matr.GetLength(0) || m > matr.GetLength(1))
+	{
+	    Console.WriteLine("The number does not exist");
+	}
+	else
+	{
+	    Console.WriteLine($"The value of number is {matr[n-1,m-1]}");
+	}
+    Console.WriteLine();
 }
+
 
 FillMatrix(matrix, start, stop);
 Console.WriteLine();
 PrintMatrix(matrix);
 Console.WriteLine();
-NumValue(matrix, row, column);
+NumValue(matrix);
 
 
