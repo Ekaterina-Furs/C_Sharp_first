@@ -84,4 +84,5 @@ FillMatrix(matrix_1, start_1, stop_1);
 PrintMatrix(matrix_1);
 Console.WriteLine();
 
-Console.WriteLine(MatrixMultiplicacion(matrix, matrix_1));
+Console.WriteLine("The result matrix is:");
+PrintMatrix(MatrixMultiplicacion(matrix, matrix_1));
