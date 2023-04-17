@@ -48,9 +48,7 @@ int[,] MatrixMultiplicacion(int[,] firstArray, int[,] secondArray)
 
     if (column1 != row2) return resultmatrix;
     else if (column1 == row2)
-        resultmatrix = new int[row1, column2];
-
-
+        
     for (int i = 0; i < row1; i++)
     {
         for (int j = 0; j < column2; j++)
